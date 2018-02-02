@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+<script src="../lib/jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $("#b1").click(function(){
+    alert($("#w3s").attr("href"));
+  });
+  $("#b2").click(function(){
+    alert($("#test").html());
+  });
+  $("#b3").click(function(){
+    alert($("#test").text());
+  });
+  $("#b4").click(function(){
+    alert($("#tx1").val());
+  });
+});
+</script>
 </head>
+
 <body>
-$END$
+<p><a href="http://www.w3school.com.cn" id="w3s">W3School.com.cn</a></p>
+<p><input type="text" id="tx1" value="123456">text content</p>
+<p id="test">this is <b>bold</b> text</p>
+<button id="b1">get href attr value</button>
+<button id="b2">get HTML value</button>
+<button id="b3">get text value</button>
+<button id="b4">get val value</button>
 </body>
+
 </html>
