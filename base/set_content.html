@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+    <script src="../lib/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#test1").text("Hello world!");
+            });
+            $("#btn2").click(function () {
+                $("#test2").html("<b>Hello world!</b>");
+            });
+            $("#btn3").click(function () {
+                $("#test3").val("Dolly Duck");
+            });
+
+            $("#btn4").click(function () {
+                $("#test4").text(function (i, origText) {
+                    return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+                });
+            });
+
+            $("#btn5").click(function () {
+                $("#test5").html(function (i, origText) {
+                    return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+<b>------------------设置值</b>
+<p id="test1">这是段落。</p>
+<p id="test2">这是另一个段落。</p>
+<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+
+<p id="test4">这是<b>粗体</b>文本。</p>
+<p id="test5">这是另一段<b>粗体</b>文本。</p>
+
+
+<button id="btn1">设置文本</button>
+<button id="btn2">设置 HTML</button>
+<button id="btn3">设置值</button>
+<br>
+<br>
+<br>
+<br>
+<b>------------------设置值回调</b>
+<br>
+<button id="btn4">显示旧/新文本</button>
+<button id="btn5">显示旧/新 HTML</button>
+</body>
+</html>
